@@ -23,7 +23,12 @@ if (process.env.NODE_ENV !== 'test') {
   connect();
 }
 
-server.use(cors());
+server.use(cors({
+  origin: 'https://painel-udop-demo.vercel.app',  // Substitua pela URL do seu front-end
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 server.use(express.json());
 
 // Initialize routes middleware
