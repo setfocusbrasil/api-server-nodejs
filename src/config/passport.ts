@@ -13,7 +13,7 @@ import { connection } from '../server/database';
 export default (pass: passport.PassportStatic) => {
   const opts = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('jwt'),
-    secretOrKey: 'éosuusdosuus',
+    secretOrKey: process.env.SECRET,
   };
 
   pass.use(

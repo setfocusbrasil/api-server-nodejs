@@ -88,7 +88,7 @@ router.post('/login', (req, res) => {
 
     bcrypt.compare(password, user.password, (_err2, isMatch) => {
       if (isMatch) {
-        if (!'éosuusdosuus') {
+        if (!process.env.SECRET) {
           throw new Error('SECRET not provided');
         }
 
@@ -96,7 +96,7 @@ router.post('/login', (req, res) => {
           id: user.id,
           username: user.username,
           email: user.email,
-        }, 'éosuusdosuus', {
+        }, process.env.SECRET, {
           expiresIn: 86400, // 1 week
         });
 
