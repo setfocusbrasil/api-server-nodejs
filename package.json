@@ -9,7 +9,7 @@
         "yarn": "v16.13.0,v17.0.0,v18.0.0"
     },
     "scripts": {
-        "start": "pm2 start production.config.json",
+        "start": "node build/index.js",
         "start-no-daemon": "pm2 start production.config.json --no-daemon",
         "start-node": "node build/index.js",
         "dev": "ts-node-dev src/index.ts",
