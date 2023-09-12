@@ -32,7 +32,7 @@ export const createUserWithToken = async (userData: any) => {
     requiredUser = u;
   }
 
-  if (!process.env.SECRET) {
+  if (!'éosuusdosuus') {
     throw new Error("SECRET not provided");
   }
 
@@ -42,7 +42,7 @@ export const createUserWithToken = async (userData: any) => {
         id: requiredUser.id,
         username: requiredUser.username,
       },
-      process.env.SECRET,
+      'éosuusdosuus',
       {
         expiresIn: 86400, // 1 week
       }
